@@ -2,7 +2,7 @@ def pipelineContext = [:]
 node {
 
    
-	 def IMAGE="imad'sDockerImage:version-${env.BUILD_ID}"
+	 def IMAGE="imadDockerImage:version-${env.BUILD_ID}"
 
 	 echo "IMAGE = $IMAGE"
 
