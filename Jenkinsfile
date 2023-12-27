@@ -1,8 +1,8 @@
 def pipelineContext = [:]
 node {
 
-   def registryProjet='registry.gitlab.com/xavki/presentations-jenkins'
-	 def IMAGE="${registryProjet}:version-${env.BUILD_ID}"
+   
+	 def IMAGE="imad'sDockerImage:version-${env.BUILD_ID}"
 
 	 echo "IMAGE = $IMAGE"
 
@@ -21,7 +21,7 @@ node {
 		}
 
 		stage('Push') {
-					docker.withRegistry('https://registry.gitlab.com', 'reg1') {
+					docker.withRegistry('jenkinsimad.azurecr.io', 'ACR credentials') {
 							img.push 'latest'
               img.push()
 					}
