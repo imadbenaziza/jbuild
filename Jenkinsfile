@@ -21,7 +21,7 @@ node {
 		}
 
 		stage('Push') {
-					docker.withRegistry('jenkinsimad.azurecr.io', 'ACR credentials') {
+					docker.withRegistry('jenkinsimad.azurecr.io', 'ACR') {
 							img.push("${env.BUILD_ID}")
               
 					}
