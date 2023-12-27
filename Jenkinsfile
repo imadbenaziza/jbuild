@@ -1,8 +1,11 @@
 def pipelineContext = [:]
 node {
 
-   
-	 def IMAGE="imaddockerimage:version-${env.BUILD_ID}"
+        def REGISTRY_NAME = 'jenkinsimad.azurecr.io'
+        def REPOSITORY_NAME = 'imaddockerimage'
+    	def IMAGE_TAG = "version-${env.BUILD_ID}"
+    	def IMAGE = "${REGISTRY_NAME}/${REPOSITORY_NAME}:${IMAGE_TAG}"
+	 
 
 	 echo "IMAGE = $IMAGE"
 
